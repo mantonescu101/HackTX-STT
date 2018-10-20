@@ -1,7 +1,7 @@
 import time
+import pdb
 import os
 import argparse
-import IPython
 from rev_ai.speechrec import RevSpeechAPI
 
 
@@ -31,9 +31,8 @@ def main():
 	result = client.submit_job_local_file(filename)
 
 	transcript = await_transcript(client, result['id'])
-
-	print(transcript['monologues'][0]['elements'][:10])
-	IPython.embed()
-
+	for word in transcript['monologues'][0]['elements']:
+		print(word['value'])
+	
 if __name__ == '__main__':
 	main()

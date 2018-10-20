@@ -1,4 +1,4 @@
- sic streaming to Rev's speech recognition API."""
+"""Basic streaming to Revs speech recognition API."""
 from ws4py.client.threadedclient import WebSocketClient
 import json
 import threading
